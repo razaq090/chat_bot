@@ -1,0 +1,9 @@
+.env
+chat.db
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+.DS_Store
