@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Chat</title>
+  <!-- Tabler Icons (for ti-plus, ti-sparkles, ti-chevron-down, ti-share, ti-dots, ti-arrow-up, ti-robot) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <div class="shell">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="sidebar">
+
+      <div class="sidebar-top">
+        <button class="new-chat-btn">
+          <i class="ti ti-plus" aria-hidden="true"></i>
+          New chat
+        </button>
+      </div>
+
+      <p class="sidebar-section">Recents</p>
+
+      <div class="chat-item active">AI-assisted Coding</div>
+      <div class="chat-item">Free OpenAI API Keys</div>
+      <div class="chat-item">Request for assistance</div>
+      <div class="chat-item">Jinja2 template overview</div>
+      <div class="chat-item">JavaScript vs Python</div>
+
+      <div class="sidebar-footer">
+        <div class="user-row">
+          <div class="avatar">AR</div>
+          <div class="user-info">
+            <span class="user-name">Abdul Razaq</span>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+    <!-- ===================== END SIDEBAR ===================== -->
+
+    <!-- ===================== MAIN ===================== -->
+    <div class="main">
+
+      <!-- Top bar -->
+      <div class="topbar">
+        <div class="model-pill">
+          <i class="ti ti-sparkles" aria-hidden="true"></i>
+          Claude Sonnet 4
+          <i class="ti ti-chevron-down" aria-hidden="true"></i>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-btn">
+            <i class="ti ti-share" aria-hidden="true"></i>
+            Share
+          </button>
+          <button class="icon-btn">
+            <i class="ti ti-dots" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Messages — filled by chat.js on DOMContentLoaded -->
+      <div class="messages" id="messages"></div>
+
+      <!-- Input -->
+      <div class="input-area">
+        <div class="input-shell">
+          <textarea
+            class="msg-input"
+            placeholder="Ask anything..."
+            rows="1"
+            aria-label="Message input"
+          ></textarea>
+          <button class="send-btn" aria-label="Send message">
+            <i class="ti ti-arrow-up" aria-hidden="true"></i>
+          </button>
+        </div>
+        <p class="input-hint">AI can make mistakes. Always verify important information.</p>
+      </div>
+
+    </div>
+    <!-- ===================== END MAIN ===================== -->
+
+  </div>
+
+  <!--
+    chat.js is loaded as a module so its top-level querySelector calls
+    run after the DOM is fully parsed — no DOMContentLoaded race condition.
+  -->
+  <script type="module" src="/static/script.js"></script>
+
+</body>
+</html>
